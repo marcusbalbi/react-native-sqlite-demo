@@ -7,9 +7,10 @@ import { useState, useEffect } from "react";
 import { useDatabase } from "../../../context/DatabaseContext";
 import { List } from "../../../types/List";
 import { ListItem } from "../../../types/ListItem";
+import { ListItemDB as database } from "../database/ListItem";
 
 export function useListItems(selectedList: List) {
-  const database = useDatabase();
+  // const database = useDatabase();
   const [selectedListsItems, setSelectedListsItems] = useState<ListItem[]>([]);
 
   useEffect(() => {
