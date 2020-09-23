@@ -5,7 +5,7 @@
  */
 import React from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
-import { ListItem } from "../types/ListItem";
+import { ListItem } from "../../../types/ListItem";
 import { Checkbox } from "./Checkbox";
 
 interface Props {

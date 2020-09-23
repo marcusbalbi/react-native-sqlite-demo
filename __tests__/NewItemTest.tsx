@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { NewItem } from "../src/components/NewItem";
+import { NewItem } from "../src/features/list/components/NewItem";
 
 test("ListItemRow renders correctly", () => {
   const tree = renderer

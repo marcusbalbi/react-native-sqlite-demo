@@ -5,7 +5,7 @@
  */
 import React from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
-import { List } from "../types/List";
+import { List } from "../../../types/List";
 
 interface Props {
   list: List;

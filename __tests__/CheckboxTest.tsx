@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 
-import { Checkbox } from "../src/components/Checkbox";
+import { Checkbox } from "../src/features/list/components/Checkbox";
 
 test("Renders correctly unchecked", () => {
   const tree = renderer.create(<Checkbox checked={false} />).toJSON();

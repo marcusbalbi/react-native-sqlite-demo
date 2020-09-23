@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { ListRow } from "../src/components/ListRow";
+import { ListRow } from "../src/features/list/components/ListRow";
 import { List } from "../src/types/List";
 
 test("ListRow renders correctly", () => {

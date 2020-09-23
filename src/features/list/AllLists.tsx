@@ -6,13 +6,13 @@
 import React, { useState } from "react";
 import { View, StyleSheet, FlatList, Text, TouchableOpacity } from "react-native";
 
-import { NewItem } from "./NewItem";
-import { Header } from "./Header";
-import { List } from "../types/List";
-import { ListRow } from "./ListRow";
-import { ViewListModal } from "./ViewListModal";
-import { SettingsModal } from "./SettingsModal";
-import { useLists } from "../hooks/useLists";
+import { NewItem } from "./components/NewItem";
+import { Header } from "../../components/Header";
+import { List } from "../../types/List";
+import { ListRow } from "./components/ListRow";
+import { ViewListModal } from "./components/ViewListModal";
+import { SettingsModal } from "../../components/SettingsModal";
+import { useLists } from "./hooks/useLists";
 
 // Main page of the app. This component renders:
 // - a header, including a cog icon to open the Settings modal
@@ -24,7 +24,7 @@ export const AllLists: React.FunctionComponent = function() {
   const [isSettingsModalVisible, setIsSettingsModalVisible] = useState(false);
 
   // Use the useLists hook to simplify list management.
-  const { lists, selectList, selectedList, createList, deleteList } = useLists();
+  const { lists, selectList, selectedList, createList, deleteList, searchByTitle } = useLists();
 
   async function handleListClicked(list: List) {
     console.log(`List clicked! Title: ${list.title}`);
@@ -44,7 +44,10 @@ export const AllLists: React.FunctionComponent = function() {
 
       <NewItem
         newItemName={newListTitle}
-        handleNameChange={(value) => setNewListTitle(value)}
+        handleNameChange={(value) => {
+          setNewListTitle(value);
+          searchByTitle(value);
+        }}
         handleCreateNewItem={createList}
         placeholderText="Enter a name for your new list"
         createButtonText="Add list"

@@ -5,12 +5,12 @@
  */
 import React, { useState } from "react";
 import { View, StyleSheet, Modal, Text, SafeAreaView, TouchableOpacity, FlatList, Alert } from "react-native";
-import { Header } from "./Header";
-import { List } from "../types/List";
+import { Header } from "../../../components/Header";
+import { List } from "../../../types/List";
 import { NewItem } from "./NewItem";
-import { ListItem } from "../types/ListItem";
+import { ListItem } from "../../../types/ListItem";
 import { ListItemRow } from "./ListItemRow";
-import { sharedStyle } from "../style/Shared";
+import { sharedStyle } from "../../../style/Shared";
 import { useListItems } from "../hooks/useListItems";
 
 interface Props {

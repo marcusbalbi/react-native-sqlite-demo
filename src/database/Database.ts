@@ -22,6 +22,7 @@ export interface Database {
   updateListItem(listItem: ListItem): Promise<void>;
   // Delete
   deleteList(list: List): Promise<void>;
+  getDatabase(): Promise<SQLite.SQLiteDatabase>;
 }
 
 let databaseInstance: SQLite.SQLiteDatabase | undefined;
@@ -211,4 +212,5 @@ export const sqliteDatabase: Database = {
   getListItems,
   updateListItem,
   deleteList,
+  getDatabase
 };

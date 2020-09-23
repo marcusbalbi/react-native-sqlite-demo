@@ -5,7 +5,7 @@
  */
 import React, { useState, useEffect } from "react";
 import { AppState, StyleSheet, SafeAreaView, AppStateStatus } from "react-native";
-import { AllLists } from "./components/AllLists";
+import { AllLists } from "./features/list/AllLists";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { useDatabaseSync } from "./hooks/useDatabaseSync";
 import { DatabaseProvider } from "./context/DatabaseContext";

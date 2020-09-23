@@ -4,9 +4,9 @@
  * https://github.com/blefebvre/react-native-sqlite-demo/blob/master/LICENSE
  */
 import { useState, useEffect } from "react";
-import { useDatabase } from "../context/DatabaseContext";
-import { List } from "../types/List";
-import { ListItem } from "../types/ListItem";
+import { useDatabase } from "../../../context/DatabaseContext";
+import { List } from "../../../types/List";
+import { ListItem } from "../../../types/ListItem";
 
 export function useListItems(selectedList: List) {
   const database = useDatabase();
