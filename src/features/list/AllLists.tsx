@@ -41,7 +41,7 @@ export const AllLists: React.FunctionComponent = function() {
         </TouchableOpacity>
         <Header title="SQLite List App - with Hooks" />
       </View>
-
+      <Text>{JSON.stringify(lists)}</Text>
       <NewItem
         newItemName={newListTitle}
         handleNameChange={(value) => {

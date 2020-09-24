@@ -54,7 +54,7 @@ export class DatabaseInitialization {
     }
 
     // List table
-    transaction.executeSql(`
+    /*transaction.executeSql(`
       CREATE TABLE IF NOT EXISTS List(
         list_id INTEGER PRIMARY KEY NOT NULL,
         title TEXT
@@ -78,7 +78,7 @@ export class DatabaseInitialization {
         version_id INTEGER PRIMARY KEY NOT NULL,
         version INTEGER
       );
-    `);
+    `);*/
   }
 
   // Get the version of the database, as specified in the Version table

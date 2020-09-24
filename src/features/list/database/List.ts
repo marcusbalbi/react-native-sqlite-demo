@@ -16,7 +16,9 @@ export const ListDB: ListDBInterface = {
   async searchByTitlte(title: String): Promise<List[]> {
     return sqliteDatabase
       .getDatabase()
-      .then((db) => db.executeSql("SELECT * FROM List where title LIKE ?", [`%${title}%`]))
+      .then((db) =>
+        db.executeSql("SELECT list_id as id, title FROM List WHERE title LIKE ? ORDER BY id DESC;", [`%${title}%`]),
+      )
       .then(([results]) => {
         if (results === undefined) {
           return [];
@@ -64,12 +66,13 @@ export const ListDB: ListDBInterface = {
           console.log(`[db] List title: ${title}, id: ${id}`);
           lists.push({ id, title });
         }
+        console.log("----------------------------------------", lists)
         return lists;
       });
   },
 
   async deleteList(list: List): Promise<void> {
-    console.log(`[db] Deleting list titled: "${list.title}" with id: ${list.id}`);
+    console.log(`[db]----------------------------------- Deleting list titled: "${list.title}" with id: ${list.id}`);
     return sqliteDatabase
       .getDatabase()
       .then((db) => {

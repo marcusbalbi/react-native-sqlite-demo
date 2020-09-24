@@ -35,6 +35,7 @@ export function useListItems(selectedList: List) {
   }
 
   async function addListItem(newItemText: string): Promise<void> {
+    console.log("-------------------------------- LISTA SELECIONADA AIU", selectedList);
     await database.addListItem(newItemText, selectedList);
     await refreshListsItems(selectedList);
   }

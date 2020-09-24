@@ -45,7 +45,8 @@ async function open(): Promise<SQLite.SQLiteDatabase> {
   // Otherwise, create a new instance
   const db = await SQLite.openDatabase({
     name: DATABASE.FILE_NAME,
-    location: "default",
+    location: "Library",
+    createFromLocation: "~/AppDatabase.db",
   });
   console.log("[db] Database open!");
 

@@ -63,6 +63,7 @@ export const ViewListModal: React.FunctionComponent<Props> = function(props) {
   return (
     <Modal animationType="slide" transparent={false} visible={visible} onRequestClose={() => props.back()}>
       <SafeAreaView style={styles.container} testID="viewListModal">
+        <Text>{JSON.stringify(list)}</Text>
         <View style={sharedStyle.headerWithButton}>
           <Header title={`List: ${list.title}`} />
 
